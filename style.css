@@ -11,12 +11,12 @@ html {
 
 section {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
 
 section nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     right: 0;
@@ -24,6 +24,7 @@ section nav {
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    padding: 0 50px;
 }
 
 section nav .logo img {
@@ -93,7 +94,7 @@ section .main .men_text h1 {
     font-size: 60px;
     position: relative;
     top: -90px;
-    left: 20px;  
+    left: 20px; 
 }
 
 section .main .men_text h1 span {
@@ -112,7 +113,7 @@ section .main .main_image img {
 }
 
 section p{
-    width: 650px;
+    width: 50%;
     text-align:justify;
     position: relative;
     left: 130px;
@@ -148,79 +149,86 @@ section .main_btn:hover i{
 /* About */
 .about {
     width: 100%;
-    height: 100vh;
-    padding: 70px 0;
+    padding: 170px 0;
 
 }
 
-.about .about_main{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    text-align: center;
-
-}
-
-.about .about_main .image img{
-    width: 35vw;
-    max-width: 400px;
-    position: relative;
-    top: 60px;
-}
-
-.about .about_main .about_text h1 span {
+.about .about_main .about_text_header h1 span {
     color: #fac031;
     margin-right: 15px;
     font-family: mv boli;
     
 }
 
-.about .about_main .about_text h1 {
-    font-size: 55px;
-    position: static;
-    bottom: 50px; 
-    font-size: clam(28px, 6vw, 55px);  
+.about .about_main .about_text_header h1 {
+    font-size: clamp(28px, 6vw, 55px);  
     margin-bottom: 1rem;
+    position: static;
+    text-align: center;
 }
 
 
-.about .about_main .about_text h3 {
+.about .about_main .about_text_header h3 {
     font-size: clamp(20px, 3vw, 30px);
     margin: 0 0 50px 0;
-
+    text-align: center;
 }
 
-.about .about_main .about_text p{
+/* Ganti kembali .about_main agar menumpuk vertikal */
+.about .about_main {
+    display: flex;
+    flex-direction: column; /* PENTING: Judul, Baris Konten, dan Sisa Teks menumpuk */
+    max-width: 1200%;
+   
+}
 
-    line-height: 22px;
-     max-width: 650px;
-    width: 90%; /* biar ikut layar */
-    text-align: center; /* ubah justify jadi center */
-    margin: 0 auto;
+/* KUNCI: Membuat Gambar dan Teks di Baris Pertama Berdampingan */
+.content_row {
+    display: flex;
+    align-items: flex-start; /* Sejajarkan di bagian atas */
+    width: 100%;
+  
+  
+    margin-bottom: 30px; /* Jarak antara baris ini dengan teks di bawahnya */
+}
+
+/* Penataan Gambar di dalam content_row */
+.content_row .image {
+    width: 35%; /* Beri lebar untuk gambar */
+    max-width: 350px;
+    margin-right: 30px; /* Jarak antara gambar dan teks di kanannya */
+    margin-left: 70px;
+}
+.content_row .image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Penataan Kolom Teks Pertama (P1 & P2) */
+.first_column_text {
+    padding: 100px;
+    width: 90%; /* Sisa lebar untuk kolom teks */
+    text-align: justify;
+}
+.first_column_text p {
+    width: 90%;
+    margin: 0 0 15px 0;
     line-height: 1.6;
-    font-size: clamp(14px, 2.5vw, 18px);
-
+    text-align: justify;
 }
 
-.about .about_btn{
-    background: #fac031;
-    padding: 12px 25px;
-    text-decoration: none;
-    color: #fff;
-    position: static; /* hilangkan left */
-    left: 55%;
-    display: inline-block;
-    border-radius: 5px;
-    margin: 30px 0 0 50px;
-
+/* Penataan Sisa Teks (Kolom 2 dan seterusnya) */
+.remaining_text {
+    width: 100%; /* Ambil lebar penuh container */
+    text-align: justify;
 }
+
 
 /*MENU */
 
 .menu{
     width: 100%;
-    padding: 70px 0;
+    padding: 10px 0;
 }
 
 .menu h1{
@@ -251,21 +259,23 @@ section .main_btn:hover i{
     width: 95%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
+    justify-content: center;
 }
 
 .menu .menu_box .menu_card {
-    width: 325px;
-    height: 480px;
+    width: 100%;
+    height: 700px;
     padding-top: 10px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
 }
 
 .menu .menu_box .menu_card .menu_image {
-    width: 300px;
-    height: 245px;
+    width: 400px;
+    height: 350px;
     margin: 0 auto;
     overflow: hidden;
 
@@ -323,36 +333,32 @@ section .main_btn:hover i{
     text-align: center;
     margin: 10px auto 10px auto;
     font-size: 25px;
-    color: #fac031;
+    color: #000;
 }
 
 .menu .menu_box .menu_card .menu_info p{
     text-align: center;
     margin-top: 8px;
     line-height: 21px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.menu .menu_box .menu_card .menu_info h3 {
-    text-align: center;
-    margin-top: 10px;
-}
 
-.menu .menu_box .menu_card .menu_info .menu_icon {
-    color: #fac031;
-    text-align: center;
-    margin: 10px 0 10px 0;
-}
+
 
 .menu .menu_box .menu_card .menu_info .menu_btn{
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: white;
-    background: #000;
-    padding: 8px 10px;
-    margin: 0 80px;
+    color: #6e695b;
+    font-weight: 400;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 10px;
+    margin:  70px;
     transition: 0.3;
+    border-radius: 15%;
 }
 
 /* GALARRY */
@@ -360,105 +366,145 @@ section .main_btn:hover i{
 .gallary {
     width: 100%;
     padding: 70px 0;
+    background-color: #f8f9fa; /* Latar belakang lembut untuk estetika modern */
 }
 
 .gallary h1 {
-    font-size: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #343a40;
 }
 
 .gallary h1 span {
-    margin-left: 15px;
     color: #fac031;
-    font-family: mv boli;
+    font-family: 'Poppins', sans-serif; /* Ganti mv boli dengan font modern jika di-import */
+    margin-left: 10px;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 .gallary h1 span::after {
     content: '';
-    width: 100%;
-    height: 2px;
+    width: 80%;
+    height: 3px;
     background: #fac031;
     display: block;
-    position: relative;
-    bottom: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .gallary .gallary_image_box {
-    width: 95%;
-    margin: 10px auto;
+    width: 90%;
+    max-width: 1300px; /* Batasi lebar maksimum wadah grid */
+    margin: 30px auto; /* PENTING: Pusatkan wadah grid */
     display: grid;
-    background: rgb(241, 239, 239);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    /* 4 kolom yang responsif: min 250px per kolom */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-gap: 30px; 
+    background: none;
 
 }
 
 .gallary .gallary_image_box .gallary_image {
+    width: 100%; /* Mengisi kolom grid */
+    height: 380px; /* Tinggi seragam agar rapi */
+    
+    /* HAPUS: margin: 150px; (Ini yang merusak tata letak) */
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
-    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    
+    background: #000; /* Latar belakang hitam untuk efek hover */
+    position: relative; /* Kunci untuk position: absolute di dalam */
+    overflow: hidden; 
+    
+    border-radius: 12px; /* Sudut lebih lembut */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bayangan modern */
+    transition: all 0.4s ease;
 }
 
 .gallary .gallary_image_box .gallary_image img {
     width: 100%;
-    transition: 0.3;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+    transition: 0.4s;
+    border-radius: 12px; /* Ikuti border-radius item */
+}
+
+.gallary .gallary_image_box .gallary_image:hover {
+    transform: scale(1.02); /* Efek angkat halus saat hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 .gallary .gallary_image_box .gallary_image:hover img {
-    opacity: 0.4;
+    opacity: 0.2; /* Lebih gelap saat hover */
+    transform: scale(1.1); /* Zoom in halus */
+}
+
+.gallary .gallary_image_box .gallary_image h3,
+.gallary .gallary_image_box .gallary_image p,
+.gallary .gallary_image_box .gallary_image .gallary_btn {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); /* Pemusatan Horizontal */
+    text-align: center;
+    color: white;
+    z-index: 5;
+    /* PENTING: Sembunyikan secara default */
+    opacity: 0; 
+    transition: all 0.4s ease;
 }
 
 .gallary .gallary_image_box .gallary_image h3 {
-    position: absolute;
-    font-size: 35px;
-    margin-bottom: 130px;
+   font-size: 24px;
+    font-weight: 700;
     color: #fac031;
-    font-family: polo;
-    z-index: 5;
-    opacity: 1;
-    transition: 0.3s;
+    /* Posisi Awal (sedikit ke atas) */
+    top: 15%; 
+    transform: translate(-50%, -20px);
 }
 
 .gallary .gallary_image_box .gallary_image:hover h3 {
     opacity: 1;
+    top: 20%; /* Sedikit bergeser ke bawah */
 }
 
 .gallary .gallary_image_box .gallary_image p {
-    position: absolute;
-    width: 400px;
-    margin-top: 30px;
-    text-align: center;
-    color: white;
-    line-height: 22px;
-    opacity: 1;
-    z-index: 5;
-    transition: 0.3s;
+   max-width: 90%; 
+    line-height: 1.5;
+    font-size: 14px;
+    /* Posisi Awal: di tengah */
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .gallary .gallary_image_box .gallary_image:hover p{
     opacity: 1;
+    transform: translate(-50%, -50%); /* Posisi normal */
 }
 
 .gallary .gallary_image_box .gallary_image .gallary_btn {
-    position: absolute;
-    margin-top: 170px;
-    color: #000;
+    padding: 10px 20px;
     background: #fac031;
-    padding: 7px 25px;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 600;
     text-decoration: none;
-    opacity: 1;
-    transform: translateY(45px);
-    z-index: 5;
-    transition: 0.3s;
+    /* Posisi Awal: agak ke bawah */
+    bottom: 10%;
+    transform: translate(-50%, 20px);
 }
 
 .gallary .gallary_image_box .gallary_image:hover .gallary_btn {
     opacity: 1;
-    transform: translateY(0);
+    bottom: 15%; /* Sedikit bergeser ke atas */
+    transform: translate(-50%, 0);
 }
 
 
@@ -597,7 +643,7 @@ section .main_btn:hover i{
     justify-content: center;
     color: #000;
     font-size: 55px;
-
+    margin-bottom: 40px;
 }
 
 .order h1 span {
@@ -613,13 +659,14 @@ section .main_btn:hover i{
     background: #fac031;
     display: block;
     position: relative;
-    bottom: 150px;
+    bottom: -5px;
 }
 
 .order .order_main {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 10px;
 }
 
 .order .order_main .order_image img{
@@ -627,28 +674,40 @@ section .main_btn:hover i{
 }
 
 .order .order_main form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0 10px; 
-}
+    width: 45%; /* Ambil 45% lebar wadah */
+    display: flex; /* Ganti dari grid ke flex untuk kemudahan penataan vertikal */
+    flex-direction: column;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}  
 
 .order .order_main form .input p {
-    line-height: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #343a40;
+    margin: 0 0 5px 0; /* Atur ulang margin agar p mendekati input */
+    padding: 0; /* Hapus padding yang tidak perlu */
 }
 
+
 .order .order_main form .input {
-    margin: 5px;
+    margin-bottom: 15px; /* Jarak antara setiap grup input */
 
 }
 
 .order .order_main form .input input {
-    width: 300px;
-    height: 35px;
+   width: 100%; /* Gunakan 100% agar mengisi lebar form */
+    height: 40px;
     padding: 0 10px;
-    border: 2px solid #cccccc;
+    border: 1px solid #cccccc; /* Border lebih tipis */
     background: #eeeeee;
     outline: none;
-    border-radius: 3px;
+    border-radius: 5px; /* Radius lebih halus */
+    box-sizing: border-box; /* Agar padding tidak menambah total lebar */
+    font-size: 16px;
+    transition: border-color 0.3s;
 } 
 
 .order .order_main form .input input:focus {
@@ -656,13 +715,25 @@ section .main_btn:hover i{
 }
 
 .order .order_main form .order_btn {
-    padding: 10px 0;
+    padding: 12px 0;
     background: #fac031;
-    color: white;
-    width: 40%;
+    color: #000; /* Ubah warna teks menjadi hitam agar kontras */
+    width: 100%; /* Tombol mengisi seluruh lebar form */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.3s;
+    
+    /* Tambahkan bayangan (dari permintaan sebelumnya) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.order .order_main form .order_btn:hover {
+    background: #e0ac25;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* TEAM */
@@ -681,7 +752,7 @@ section .main_btn:hover i{
     align-items: center;
     justify-content: center;
     font-size: clamp(28px, 6vw, 55px); /* responsive otomatis */
-    margin-bottom: 30px;
+    margin-bottom: 200px;
 }
 
 .team h1 span {
@@ -731,6 +802,7 @@ section .main_btn:hover i{
 .team .team_box .profile:hover{
     border-radius: 20px;
     height: 320px;
+    background: #000;
 }
 
 .team .team_box .profile img {
@@ -759,6 +831,7 @@ section .main_btn:hover i{
 
 .team .team_box .profile:hover .info {
     top: 60%;
+    color: #eeeeee;
 }
 
 .team .team_box .profile .info .name {
@@ -767,20 +840,13 @@ section .main_btn:hover i{
 }
 
 .team .team_box .profile .info .bio {
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin: 0 auto 10px auto;
 }
 
-.team .team_box .profile .info .team_icon i {
-    margin: 10px 5px 5px 0;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
-.team .team_box .profile .info .team_icon i:hover {
-    color: #fac031;
-}
+
 
 
 /* FOOTER */
@@ -857,403 +923,3 @@ footer .end span {
 /*      RESPONSIVE DESIGN        */
 /* ============================= */
 
-/* Tablet (max-width: 1024px) */
-@media (max-width: 1024px) {
-    section .main {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 20px;
-        top: 0;
-        padding: 50px 20px;
-    }
-
-    section .main .men_text h1 {
-        font-size: 40px;
-        top: 0;
-        left: 0;
-        text-align: center;
-    }
-      section .main .men_text h1 span {
-        font-size: 45px;
-        margin-left: 8px;
-    }
-
-    section .main .main_image img {
-        width: 80%;
-        max-width: 350px;
-        left: 0;
-        padding-top:50px;
-    }
-
-    section p {
-        width: 80%;
-        max-width: 500px;
-        text-align: justify;
-        position: static;
-        
-        left: 0;
-        margin: 0 auto;
-    }
-
-    .about .about_main {
-        flex-direction: column;
-        text-align: center;
-    }
-
-     .about .about_main .about_text h1 {
-        font-size: 6vw;
-    }
-
-    .about .about_main .about_text p {
-       align-items: center;
-    }
-    .about .about_main .about_text h1 span {
-        display: block; /* buat span pindah ke baris baru jika perlu */
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-
-
-    .about .about_main .image img {
-        width: 70%;
-    }
-
-    .menu .menu_box {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        justify-items: center; /* biar kartu selalu center */
-    }
-
-     .menu .menu_box .menu_card .menu_image img {
-        width: 100%;       /* biar mengikuti lebar kartu */
-        height: auto;      /* tinggi menyesuaikan lebar */
-        max-width: 300px;  /* batasi maksimal agar tidak terlalu besar */
-        object-fit: cover; /* tetap rapih tanpa merusak proporsi */
-    }
-
-    .menu .menu_box .menu_card {
-        width: 100%;         /* sesuaikan lebar kartu agar pas di grid */
-        max-width: 300px;
-    }
-
-    .about .about_btn {
-        margin-left: 20px; /* jarak kiri lebih kecil untuk tablet */
-        margin-top: 20px;  /* jarak atas tetap rapi */
-        width: 50%;
-    }
-
-
-    .review .review_box {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .order .order_main {
-        flex-direction: column;
-    }
-
-    .team .team_box {
-        flex-direction: column;  /* semua profil turun satu kolom */
-        align-items: center;     /* center */
-        gap: 30px;               /* jarak antar profil */
-        position: static;
-        top: auto;
-    }
-
-     .team .team_box .profile {
-        width: 80%;
-        max-width: 300px;        /* batasi maksimal */
-        height: auto;            /* tinggi menyesuaikan isi */
-        border-radius: 20px;
-        margin: 0 auto;
-        overflow: hidden;        /* supaya konten tidak keluar */
-    }
-
-    .team .team_box .profile img {
-        width: 100%;
-        height: auto;            /* ikuti lebar */
-        border-radius: 20px;
-        margin-top: 0;           /* jangan naik */
-        object-fit: cover;
-    }
-
-    .team .team_box .profile:hover {
-        transform: scale(1.05);  /* zoom ringan */
-        margin-top: 0;
-    }
-
-    .team .team_box .profile:hover img {
-        border-radius: 20px;
-        margin-top: 0;         /* jangan naik */
-    }
-
-    .team .team_box .profile .info {
-        position: static;
-        top: auto;
-        transform: none;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .team .team_box .profile:hover .info {
-        top: auto;
-    }
-
-    footer .footer_main {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-}
-
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
-    section nav {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    section nav ul {
-        margin-top: 10px;
-    }
-
-    section nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    section .main .men_text h1 {
-        font-size: 40px;
-        padding: 170px;
-    }
-
-    section .main .men_text h1 span {
-        font-size: 45px;
-    }
-
-    .about .about_main {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about .about_main .about_text h1 {
-        font-size: 8vw;
-        text-align: center; /* agar center di layar kecil */
-    }
-
-    .about .about_main .about_text h1 span {
-        display: block; /* buat span pindah ke baris baru jika perlu */
-        margin-right: 0 auto 0.5rem auto;
-        font-size: 9vw;
-    }
-
-    .about .about_main .image img {
-        width: 70%;
-        top: 0;
-    }
-
-    .menu .menu_box {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallary .gallary_image_box {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .order {
-        height: auto;
-        padding: 50px 20px;
-    }
-
-    .order .order_main {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .order .order_main .order_image img {
-        width: 90%;
-        max-width: 300px;
-        height: auto;
-    }
-
-    .order .order_main form {
-        grid-template-columns: 1fr;
-        width: 90%;
-    }
-
-     .review_box {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .review_card {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .review_profile img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .review_text {
-        text-align: center;
-        padding: 10px;
-    }
-
-     .team {
-        height: auto; /* biar tinggi menyesuaikan isi */
-        padding: 50px 20px;
-    }
-
-      .team h1 {
-        font-size: 40px;
-        margin-bottom: 20px;
-    }
-    
-    .team .team_box {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px; /* beri jarak antar profil */
-        position: static;
-        top: auto;
-    }
-
-      .team .team_box .profile {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 20px;
-        position: relative;
-        overflow: hidden; /* supaya isi tetap di dalam */
-    }
-
-     .team .team_box .profile .info {
-        position: static;
-        top: auto;
-        transform: none;
-        padding: 10px;
-    }
-
-    .team .team_box .profile img {
-        width: 100%;
-        height: 100%;
-    }
-
-      .team .team_box .profile:hover {
-        height: auto;
-         transform: none;
-        border-radius: 20px;
-    }
-
-    .team .team_box .profile:hover img {
-        transform: scale(1.1);
-        margin-top: 0; /* jangan naik di HP */
-    }
-
-
-      .team .team_box .profile .info {
-        top: 70%;
-    }
-
-      .team .team_box .profile:hover .info {
-        top: 80%;
-    }
-
-    footer .footer_main {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Small Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-    section nav .logo img {
-        width: 80px;
-    }
-
-    section .main .men_text h1 {
-        font-size: 32px;
-    }
-
-    .menu h1, .about h1, .gallary h1, .review h1, .team h1, .order h1 {
-        font-size: 35px;
-    }
-
-    .menu .menu_box {
-        grid-template-columns: 1fr;
-    }
-
-    .gallary .gallary_image_box {
-        grid-template-columns: 1fr;
-    }
-
-    .review .review_box {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team .team_box .profile {
-        width: 260px;
-        height: 260px;
-    }
-
-    .order .order_main .order_image img {
-        width: 90%;
-    }
-
-    footer .end {
-        font-size: 14px;
-        text-align: center;
-    }
-}
-
-/* ============================= */
-/*    RESPONSIVE NAVIGATION     */
-/* ============================= */
-
-/* Tombol hamburger (disembunyikan di layar besar) */
-.menu-toggle {
-    display: none;
-    font-size: 25px;
-    color: #000;
-    cursor: pointer;
-}
-
-/* Tampilkan tombol hamburger di layar kecil */
-@media (max-width: 768px) {
-    section nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 10px 30px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    section nav ul {
-        display: none;
-        width: 100%;
-        text-align: center;
-        flex-direction: column;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        border-radius: 5px;
-        margin-top: 10px;
-        padding: 15px 0;
-    }
-
-    section nav ul.active {
-        display: flex;
-    }
-
-    section nav ul li {
-        display: block;
-        margin: 12px 0;
-    }
-}
