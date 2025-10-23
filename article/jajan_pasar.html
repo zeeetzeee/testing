@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jajanan Pasar Dan Selera Modern</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+       background: linear-gradient(135deg, #f6fff8, #dfffe6);
+        color: #2c3e50; /* Dark Blue Grey */
+        min-height: 100vh; /* Pastikan tinggi penuh */
+        display: flex;
+        flex-direction: column;
+        line-height: 1.7;
+        text-rendering: optimizeLegibility; /* Peningkatan kualitas rendering teks */
+      }
+
+      .header-container {
+        background: #ffffff;
+        padding: 1.5rem 0; /* Padding lebih besar */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Bayangan lebih jelas */
+        display: flex; /* Untuk memposisikan h1 di tengah jika ada elemen lain */
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 4rem);
+        font-weight: 900;
+        text-align: center;
+        background: linear-gradient(90deg, #81d4fa, #ffd7a6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        width: auto; /* Menggunakan auto karena sudah di-center oleh container */
+        letter-spacing: 0.1rem;
+      }
+
+      .content-wrapper {
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        flex-grow: 1;
+      }
+
+      .text-block {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        background: #ffffff; /* Latar belakang putih untuk memisahkan bagian */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+      }
+
+      p {
+        width: 100%; /* Hapus width 90% di p, gunakan lebar dari .text-block */
+        margin: 0 0 1.5rem 0; /* Margin antar paragraf yang lebih bersih */
+        text-align: justify;
+        color: #4a6572;
+        font-size: clamp(1rem, 1.2vw, 1.3rem);
+      }
+
+      p:last-child {
+        margin-bottom: 0; /* Hapus margin bawah pada paragraf terakhir dalam block */
+      }
+
+      b {
+        color: #008080;
+        font-weight: 700;
+      }
+
+      figure {
+        margin: 3rem 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      figure .image-gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px; /* Jarak antar gambar diperlebar */
+      }
+
+      figure img {
+        width: 100%;
+        max-width: 350px;
+        height: 220px; /* Berikan tinggi tetap agar gambar terlihat seragam */
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bayangan lebih dramatis */
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi bounce saat hover */
+        border: 3px solid #ffd7a6; /* Border tipis untuk detail */
+      }
+
+      figure img:hover {
+        transform: scale(1.05) rotate(1deg);
+      }
+
+      figcaption {
+        font-size: 0.9rem;
+        color: #ff7f50;
+        margin-top: 20px;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .main-button {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        background: #008080;
+        padding: 15px 35px; /* Padding dilebarkan */
+        border-radius: 50px;
+        max-width: 300px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 6px 15px rgba(0, 128, 128, 0.4);
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+      }
+
+      .main-button:hover {
+        transform: translateY(-5px);
+        background: #ff7f50;
+        box-shadow: 0 10px 25px rgba(255, 127, 80, 0.5);
+      }
+
+      .site-footer {
+        padding: 1rem 1.5rem;
+        background-color: #2c3e50; /* Warna gelap */
+        color: #fcf8f3;
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: auto; /* Memastikan footer berada di bawah */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-container">
+      <h1>🍥Jajanan Pasar dan Selera Modern</h1>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="text-block">
+        <p>
+          Indonesia sebagai negara kepulauan memiliki kekayaan kuliner dan
+          warisan budaya yang beragam, salah satunya adalah jajanan tradisional.
+          Jajanan tradisional, baik yang asin ataupun manis, umumnya dibuat
+          tanpa pengawet dan menggunakan bahan-bahan alami. Pedagang jajanan
+          tradisional sering kali membuat jajanan ini langsung di hadapan
+          konsumen agar tetap terjaga kualitasnya, contohnya
+          <b>"Kue Putu Bambu"</b> dan <b>"Kerak Telor"</b>
+          <u>(Oktaviani, 2017).</u> Setiap daerah memiliki jajanan lokal
+          tradisional yang berbeda, namun sering ditemukan produk yang sama
+          tetapi dengan nama yang berbeda. Berbagai jajanan tradisional sering
+          dijumpai sebagai “camilan” dalam acara jamuan dari berbagai kalangan
+          masyarakat. Selain dijual secara bebas di pasar tradisional, jajanan
+          tradisional ini kerap ditemui di supermarket atau mall. <br />
+        </p>
+      </section>
+
+      <figure class="image-section">
+        <div class="image-gallery">
+          <img src="image/kueputu.jpg" alt="Kue Putu Bambu" />
+          <img src="image/keraktelor.webp" alt="Kerak Telor" />
+        </div>
+        <figcaption>Gambar: Kue Putu Bambu & Kerak Telor</figcaption>
+      </figure>
+
+      <section class="text-block">
+        <p>
+          Melihat nilai historis dan kuliner dari jajanan ini, penting untuk
+          mempertimbangkan cara untuk melestarikan jajanan tradisional di tengah
+          perubahan tren konsumsi generasi muda, khususnya Gen Z yang telah
+          dipengaruhi oleh modernisasi dan digitalisasi agar tetap dapat
+          dinikmati oleh generasi selanjutnya di masa mendatang
+          <u>(Nahak, 2019).</u> Namun, dalam beberapa tahun terakhir, tren
+          konsumsi masyarakat, terutama di kalangan generasi muda, mengalami
+          perubahan signifikan. Generasi Z, yang lahir antara tahun
+          <b>1997 hingga 2012</b> , dikenal sebagai kelompok yang lahir di era
+          digital. Mereka cenderung lebih memilih produk-produk yang inovatif
+          dan memiliki nilai unik <u>(Warren et al., 2024).</u>
+        </p>
+
+        <p>
+          Di tengah kemajuan teknologi, media sosial, dan tren global,
+          preferensi serta gaya hidup Gen Z, bahkan dalam hal memilih makanan,
+          juga mengalami perubahan. Gen Z mengutamakan aspek
+          <b>visual, inovasi, kemasan menarik, rasa,</b> serta
+          <b>aksesibilitas produk.</b> <u></u>(Smith & Yamakawa, 2020) yang
+          membuat mereka cenderung memilih produk yang berbeda. Penelitian oleh
+          <u>(Akhmadi & Afif Rasyid Alfathah, 2021)</u> membuktikan betapa
+          pentingnya aksesibilitas produk, terutama bagi Gen Z yang sering
+          melakukan transaksi jual-beli makanan melalui aplikasi online seperti
+          <b>GrabFood ataupun GoFood</b>
+        </p>
+
+        <p>
+          Adapun penelitian yang dilakukan oleh (Ulita et al., 2024) menunjukkan
+          bahwa preferensi makanan Gen Z berubah menjadi healthy food dimulai
+          sejak COVID melanda, mulai dari tahun 2020 sampai tahun 2022.
+          Kecenderungan ini menjadi tantangan tersendiri bagi produk jajanan
+          tradisional yang seringkali kalah saing dalam aspek inovasi, visual,
+          dan aksesibilitas produk. tersebut berdampak pada menurunnya minat
+          para Gen Z untuk membeli makanan tradisional khas Indonesia.
+          Peningkatan kualitas produk akan meningkatkan minat beli Gen Z
+          terhadap jajanan tradisional.
+        </p>
+      </section>
+
+      <figure class="image-section">
+        <div class="image-gallery">
+          <img src="image/jajanpasar.jpg" alt="Jajan Pasar Inovasi" />
+          <img src="image/jajanpasar3.jpg" alt="Jajan Pasar Modern" />
+        </div>
+        <figcaption>Gambar: Inovasi Jajan Pasar Glow Up</figcaption>
+      </figure>
+
+      <section class="text-block">
+        <p>
+          Maka, pedagang jajanan tradisional harus lebih menjaga dan
+          meningkatkan standar kualitas produk agar dapat meningkatkan minat
+          beli konsumen Gen Z. Pemerintah juga dapat berkontribusi dalam bentuk
+          <b>sosialisasi</b> dan <b>memperkenalkan Gen Z</b> dengan jajanan
+          tradisional khas <b>Indonesia,</b> serta dapat mengadakan pelatihan
+          bagi para pedagang jajanan tradisional dalam hal inovasi produk dan
+          <b>festival kuliner.</b>
+        </p>
+      </section>
+
+      <div class="button-container">
+        <a href="index.html" class="main-button">➡️Halaman Utama</a>
+      </div>
+    </main>
+  </body>
+</html>
